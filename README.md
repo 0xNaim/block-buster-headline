@@ -1,6 +1,6 @@
 # `Block Buster Headline Web Application`
 
-### `Block Buster Headline` is a simple react application. Here you can see all <br/> category's `Top News Headlines.` <br/><br/>
+### `Block Buster Headline` is a simple react application. Here you can see all <br/><br/> category's `Top News Headlines.` <br/><br/>
 
 ## `Screenshot-1`
 ![Screenshot-1](https://raw.githubusercontent.com/0xNaim/block-buster-headline/master/src/screenshot/screenshot-1.jpg)
