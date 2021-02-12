@@ -6,6 +6,7 @@ import PageFound from "./components/PageFound";
 import Pagination from "./components/Pagination";
 import News, { newsCategory } from "./news/News";
 
+
 const news = new News(newsCategory.technology);
 class App extends Component {
   state = {
@@ -122,7 +123,7 @@ class App extends Component {
     return (
       <div className="container" style={{ fontFamily: "Roboto, sans-serif" }}>
         <div className="row">
-          <div className="col-sm-6 offset-md-3">
+          <div className="col-sm-6 col-md-10 offset-md-1">
             <Header
               category={category}
               changeCategory={this.changeCategory}

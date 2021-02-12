@@ -28,7 +28,7 @@ const NewsItem = ({ item }) => (
       </a>
       <div className="d-flex mt-2 align-items-center">
         <small>
-          <strong>published at {getDateString(item.publishedAt)}</strong>
+          <strong>Published at {getDateString(item.publishedAt)}</strong>
         </small>
         <div
           style={{
