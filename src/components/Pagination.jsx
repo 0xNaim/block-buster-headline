@@ -6,7 +6,6 @@ class Pagination extends Component {
   };
 
   render() {
-    console.log(this.props);
     const {
       currentPage,
       totalPage,

@@ -17,7 +17,6 @@ class App extends Component {
     news
       .getNews()
       .then((data) => {
-        console.log(data);
         this.setState({ data, isLoading: false });
       })
       .catch((e) => {
@@ -96,6 +95,20 @@ class App extends Component {
       });
   };
 
+  search = (searchTerm) => {
+    this.setState({ isLoading: true });
+    news
+      .search(searchTerm)
+      .then((data) => {
+        this.setState({ data, isLoading: false });
+      })
+      .catch((e) => {
+        console.log(e);
+        alert("Something Went Wrong");
+        this.setState({ isLoading: false });
+      });
+  };
+
   render() {
     const {
       article,
@@ -110,7 +123,11 @@ class App extends Component {
       <div className="container" style={{ fontFamily: "Roboto, sans-serif" }}>
         <div className="row">
           <div className="col-sm-6 offset-md-3">
-            <Header category={category} changeCategory={this.changeCategory} />
+            <Header
+              category={category}
+              changeCategory={this.changeCategory}
+              search={this.search}
+            />
             <PageFound
               totalResults={totalResults}
               currentPage={currentPage}

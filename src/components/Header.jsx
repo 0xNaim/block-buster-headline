@@ -11,7 +11,9 @@ class Header extends Component {
   };
 
   handleKeyPress = (e) => {
-    // code goes to here
+    if (e.key === "Enter") {
+      this.props.search(this.state.searchTerm);
+    }
   };
 
   render() {
