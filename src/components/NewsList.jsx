@@ -16,7 +16,7 @@ const NewsItem = ({ item }) => (
         rel="noreferrer"
         style={{ color: "#424242" }}
       >
-        <h3 className="card-title">{item.title}</h3>
+        <h4 className="card-title">{item.title}</h4>
       </a>
       <a
         href={item.url}
