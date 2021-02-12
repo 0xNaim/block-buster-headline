@@ -1,1 +1,1 @@
-# `Block Buster Headline Web Application Built With React`
+# `Block Buster Headline Web Application`
