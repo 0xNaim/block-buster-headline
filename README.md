@@ -1,4 +1,4 @@
-# `Block Buster Headline Web Application`<br/><br/>
+# `Block Buster Headline Web Application`<br/>
 
 ### `Block Buster Headline` is a simple react application. Here you can see all category's `Top News Headlines` with full details. Also, you can visit the original news site. <br/><br/>
 
