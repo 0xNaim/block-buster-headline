@@ -48,7 +48,7 @@ export default class News {
   }
 
   prev() {
-    if (this._isPrev()) {
+    if (this._isPrevious()) {
       this._currentPage--;
       return this.getNews();
     }
