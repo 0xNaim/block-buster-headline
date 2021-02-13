@@ -31,13 +31,13 @@ const NewsItem = ({ item }) => (
           <strong>Published at {getDateString(item.publishedAt)}</strong>
         </small>
         <div
+          className="ms-auto"
           style={{
             padding: "0.25rem 0.5rem",
             background: "#ededed",
             color: "#424242",
             borderRadius: "0.25rem",
             display: "inline-block",
-            marginLeft: "auto"
           }}
         >
           <small>{item.source.name}</small>

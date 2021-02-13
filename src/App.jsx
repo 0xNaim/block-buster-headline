@@ -6,13 +6,14 @@ import PageFound from "./components/PageFound";
 import Pagination from "./components/Pagination";
 import News, { newsCategory } from "./news/News";
 
-
-const news = new News(newsCategory.technology);
+const news = new News(newsCategory.general);
 class App extends Component {
   state = {
     data: {},
     isLoading: true,
   };
+
+  jumpTop = React.createRef();
 
   componentDidMount() {
     news
@@ -25,6 +26,8 @@ class App extends Component {
         alert("Something Went Wrong");
         this.setState({ isLoading: false });
       });
+
+    console.dir(this.jumpTop.current);
   }
 
   next = () => {
@@ -110,6 +113,10 @@ class App extends Component {
       });
   };
 
+  goToTop = () => {
+    window.scroll(0, this.jumpTop.current.scrollTop);
+  };
+
   render() {
     const {
       article,
@@ -122,7 +129,7 @@ class App extends Component {
     } = this.state.data;
     return (
       <div className="container" style={{ fontFamily: "Roboto, sans-serif" }}>
-        <div className="row">
+        <div className="row d-flex">
           <div className="col-sm-6 col-md-10 offset-md-1">
             <Header
               category={category}
@@ -130,6 +137,7 @@ class App extends Component {
               search={this.search}
             />
             <PageFound
+              jumpTop={this.jumpTop}
               totalResults={totalResults}
               currentPage={currentPage}
               totalPage={totalPage}
@@ -153,6 +161,13 @@ class App extends Component {
             )}
           </div>
         </div>
+        <button
+          onClick={this.goToTop}
+          className="btn btn-primary"
+          style={{ float: "right", marginTop: "-92px" }}
+        >
+          &#8593;
+        </button>
       </div>
     );
   }

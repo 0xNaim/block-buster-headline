@@ -1,10 +1,12 @@
-import React, { Component } from "react";
+import React, { Component, createRef } from "react";
 import { newsCategory } from "../news/News";
 
 class Header extends Component {
   state = {
     searchTerm: "",
   };
+
+  searchBarRef = createRef();
 
   handleChange = (e) => {
     this.setState({ searchTerm: e.target.value });
@@ -16,6 +18,10 @@ class Header extends Component {
     }
   };
 
+  componentDidMount() {
+    this.searchBarRef.current.focus();
+  }
+
   render() {
     const { category, changeCategory } = this.props;
     return (
@@ -24,6 +30,7 @@ class Header extends Component {
           Block Buster Headlines
         </h1>
         <input
+          ref={this.searchBarRef}
           type="search"
           className="form-control"
           placeholder="Type Anything & Press Enter to Search"
@@ -38,8 +45,7 @@ class Header extends Component {
                 return (
                   <button
                     onClick={() => changeCategory(newsCategory[item])}
-                    className="btn btn-sm btn-warning mr-2 mb-2"
-                    style={{ marginRight: "0.5rem" }}
+                    className="btn btn-sm btn-warning me-2 mb-2"
                   >
                     {`#${newsCategory[item]}`}
                   </button>
@@ -48,8 +54,7 @@ class Header extends Component {
               return (
                 <button
                   onClick={() => changeCategory(newsCategory[item])}
-                  className="btn btn-sm btn-secondary mr-2 mb-2"
-                  style={{ marginRight: "0.5rem" }}
+                  className="btn btn-sm btn-secondary me-2 mb-2"
                 >
                   {`#${newsCategory[item]}`}
                 </button>

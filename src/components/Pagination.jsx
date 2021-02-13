@@ -55,8 +55,7 @@ class Pagination extends Component {
           )}
         </div>
         <button
-          className="btn btn-warning"
-          style={{ marginLeft: "auto" }}
+          className="btn btn-warning ms-auto"
           disabled={!isNext}
           onClick={() => {
             next();
