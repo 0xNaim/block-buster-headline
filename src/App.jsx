@@ -26,8 +26,6 @@ class App extends Component {
         alert("Something Went Wrong");
         this.setState({ isLoading: false });
       });
-
-    console.dir(this.jumpTop.current);
   }
 
   next = () => {
